@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>John Reno Bedonia - Portfolio</title>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <style>
         /* CSS RESET & VARIABLES */
         :root {
@@ -96,9 +99,17 @@
         }
 
         /* CONTROL BUTTON VISIBILITY PER PAGE STATE */
-        body.page-home .nav-btn-home { display: none; }
-        body.page-about .nav-btn-about { display: none; }
-        body.page-contact .nav-btn-contact { display: none; }
+        body.page-home .nav-btn-home {
+            display: none;
+        }
+
+        body.page-about .nav-btn-about {
+            display: none;
+        }
+
+        body.page-contact .nav-btn-contact {
+            display: none;
+        }
 
         /* HERO CARD / CORE SECTION CONTAINER */
         .page-section {
@@ -190,7 +201,8 @@
         /* Portrait Masking & Blending */
         .hero-portrait {
             position: absolute;
-            bottom: -60px; /* Aligns with bottom padding edge of container */
+            bottom: -60px;
+            /* Aligns with bottom padding edge of container */
             right: 0;
             height: 540px;
             width: auto;
@@ -242,21 +254,45 @@
 
         /* Floating keyframes */
         @keyframes float1 {
-            0% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(3deg); }
-            100% { transform: translateY(0px) rotate(0deg); }
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(3deg);
+            }
+
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
         }
 
         @keyframes float2 {
-            0% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(-4deg); }
-            100% { transform: translateY(0px) rotate(0deg); }
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(-4deg);
+            }
+
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
         }
 
         @keyframes float3 {
-            0% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-18px) rotate(2deg); }
-            100% { transform: translateY(0px) rotate(0deg); }
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-18px) rotate(2deg);
+            }
+
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
         }
 
 
@@ -269,7 +305,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-top: 1px solid rgba(0,0,0,0.1);
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
         }
 
         .footer-left {
@@ -290,7 +326,7 @@
             overflow: hidden;
             width: 46px;
             height: 46px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
             background: transparent;
             transition: all 0.3s ease;
         }
@@ -342,7 +378,7 @@
             font-family: var(--font-heading);
             font-weight: normal;
             font-size: 1.15rem;
-            color: rgba(0,0,0,0.7);
+            color: rgba(0, 0, 0, 0.7);
             letter-spacing: 0.5px;
             text-transform: uppercase;
             text-decoration: none;
@@ -359,22 +395,28 @@
             .card-container {
                 padding: 40px;
             }
+
             #home .card-container {
                 gap: 30px;
             }
+
             .hero-text h1 {
                 font-size: 2.8rem;
             }
+
             .hero-visuals {
                 height: 400px;
             }
+
             .hero-portrait {
                 height: 450px;
                 bottom: -40px;
             }
+
             .floating-icon {
                 transform: scale(0.85);
             }
+
             .floating-icon:hover {
                 transform: scale(1) !important;
             }
@@ -385,43 +427,53 @@
                 padding: 20px 10px;
                 gap: 20px;
             }
+
             header {
                 justify-content: center;
                 padding-right: 0;
             }
+
             .nav-btn {
                 padding: 10px 25px;
                 font-size: 0.95rem;
             }
+
             .card-container {
                 padding: 30px 20px;
                 border-radius: 35px;
             }
-            
+
             /* Home Mobiles */
             #home .card-container {
                 grid-template-columns: 1fr;
                 gap: 40px;
                 text-align: center;
             }
+
             .hero-text {
                 align-items: center;
                 text-align: center;
             }
+
             .hero-text h1 {
                 font-size: 2.3rem;
             }
+
             .hero-text h2 {
                 margin-bottom: 25px;
                 font-size: 1.1rem;
             }
+
             .hero-text p {
                 font-size: 1rem;
             }
+
             .hero-visuals {
                 height: 320px;
-                order: 2; /* Move visual layout below text on mobile */
+                order: 2;
+                /* Move visual layout below text on mobile */
             }
+
             .hero-portrait {
                 height: 360px;
                 bottom: -30px;
@@ -429,14 +481,17 @@
                 left: 50%;
                 transform: translateX(-50%);
             }
+
             .icon-www {
                 top: 5%;
                 right: 15%;
             }
+
             .icon-js {
                 bottom: 10%;
                 right: 18%;
             }
+
             .icon-html {
                 top: 20%;
                 left: 10%;
@@ -449,9 +504,11 @@
                 padding: 30px 20px;
                 text-align: center;
             }
+
             .footer-left {
                 align-items: center;
             }
+
             .footer-right {
                 flex-direction: column;
                 gap: 20px;
@@ -460,10 +517,11 @@
         }
     </style>
 </head>
+
 <body class="page-home">
 
     <div class="portfolio-wrapper">
-        
+
         <!-- HEADER / NAVIGATION -->
         <header>
             <nav class="nav-links">
@@ -475,14 +533,17 @@
 
         <!-- MAIN CARD PORTFOLIO CONTENT -->
         <main>
-            
+
             <!-- HOME SECTION -->
             <section id="home" class="page-section active-display fade-in">
                 <div class="card-container">
                     <div class="hero-text">
-                        <h1>JOHN RENO BEDONIA</h1>
+                        <h1>JOHN RENO</h1>
                         <h2>Webdev / UI/UX Designer</h2>
-                        <p>I'm a fresh graduate with a degree of Bachelor of Science and Information Technology. Knowledgeable in creatives and technical design skills and I'm producing visually appealing web designs and prototype materials that effectively communicate information and enhance brand identity.</p>
+                        <p>I'm a fresh graduate with a degree of Bachelor of Science and Information Technology.
+                            Knowledgeable in creatives and technical design skills and I'm producing visually appealing
+                            web designs and prototype materials that effectively communicate information and enhance
+                            brand identity.</p>
                     </div>
                     <div class="hero-visuals">
                         <img src="1_processed.png" alt="John Reno Bedonia Portrait" class="hero-portrait">
@@ -502,13 +563,16 @@
         <div class="footer-left">
             <div class="footer-socials">
                 <!-- Social links pointing to target platforms -->
-                <a href="https://github.com/Renojayy" class="social-link" title="GitHub" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/Renojayy" class="social-link" title="GitHub" target="_blank"
+                    rel="noopener noreferrer">
                     <img src="github.png" alt="GitHub">
                 </a>
-                <a href="https://www.upwork.com/freelancers/~019bd1e8b75ef7b041" class="social-link" title="Upwork" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.upwork.com/freelancers/~019bd1e8b75ef7b041" class="social-link" title="Upwork"
+                    target="_blank" rel="noopener noreferrer">
                     <img src="upwork.png" alt="Upwork">
                 </a>
-                <a href="https://www.facebook.com/johnreno.ix.9" class="social-link" title="Facebook" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.facebook.com/johnreno.ix.9" class="social-link" title="Facebook" target="_blank"
+                    rel="noopener noreferrer">
                     <img src="facebook.png" alt="Facebook">
                 </a>
             </div>
@@ -520,18 +584,22 @@
         <div class="footer-right">
             <div class="footer-col">
                 <span class="footer-col-title">Facebook</span>
-                <a href="https://www.facebook.com/johnreno.ix.9" class="footer-col-val" target="_blank" rel="noopener noreferrer">John Reno</a>
+                <a href="https://www.facebook.com/johnreno.ix.9" class="footer-col-val" target="_blank"
+                    rel="noopener noreferrer">John Reno</a>
             </div>
             <div class="footer-col">
                 <span class="footer-col-title">Github</span>
-                <a href="https://github.com/Renojayy" class="footer-col-val" target="_blank" rel="noopener noreferrer">Renojayy</a>
+                <a href="https://github.com/Renojayy" class="footer-col-val" target="_blank"
+                    rel="noopener noreferrer">Renojayy</a>
             </div>
             <div class="footer-col">
                 <span class="footer-col-title">Upwork</span>
-                <a href="https://www.upwork.com/freelancers/~019bd1e8b75ef7b041" class="footer-col-val" target="_blank" rel="noopener noreferrer">John Bedonia</a>
+                <a href="https://www.upwork.com/freelancers/~019bd1e8b75ef7b041" class="footer-col-val" target="_blank"
+                    rel="noopener noreferrer">John Bedonia</a>
             </div>
         </div>
     </footer>
 
 </body>
+
 </html>
