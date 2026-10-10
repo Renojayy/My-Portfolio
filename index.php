@@ -57,12 +57,20 @@
             justify-content: center;
         }
 
-        /* HEADER NAVIGATION */
+        /* STICKY HEADER NAVIGATION */
         header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
             display: flex;
             justify-content: flex-end;
             width: 100%;
-            padding-right: 10px;
+            padding: 20px 40px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            background: rgba(2, 2, 5, 0.45);
+            border-bottom: 1px solid rgba(0, 119, 230, 0.15);
+            transition: all 0.3s ease;
         }
 
         .nav-links {
@@ -91,35 +99,39 @@
             box-shadow: 0 0 20px rgba(0, 119, 230, 0.7);
         }
 
+        .nav-btn.active {
+            background-color: #ffffff;
+            color: var(--primary-blue);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+        }
+
         .nav-btn:active {
             transform: translateY(0);
         }
 
-        /* CONTROL BUTTON VISIBILITY PER PAGE STATE */
-        body.page-home .nav-btn-home { display: none; }
-        body.page-about .nav-btn-about { display: none; }
-        body.page-contact .nav-btn-contact { display: none; }
-
-        /* HERO CARD / CORE SECTION CONTAINER */
-        .page-section {
-            display: none;
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        /* MAIN & SECTION CONTAINERS WITH SCROLL ANIMATION */
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 70px;
             width: 100%;
         }
 
-        .page-section.active-display {
-            display: block;
+        .page-section {
+            width: 100%;
+            scroll-margin-top: 100px;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
-        .page-section.fade-in {
+        .page-section.is-visible {
             opacity: 1;
             transform: translateY(0);
         }
 
         .card-container {
-            background: linear-gradient(135deg, rgba(10, 48, 120, 0.8) 0%, rgba(5, 25, 70, 0.9) 100%);
+            background: linear-gradient(135deg, rgba(10, 48, 120, 0.85) 0%, rgba(5, 25, 70, 0.95) 100%);
             border: 1.5px solid var(--card-border);
             border-radius: 50px;
             box-shadow: var(--card-glow);
@@ -128,6 +140,12 @@
             padding: 60px;
             width: 100%;
             overflow: hidden;
+            transition: border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .card-container:hover {
+            border-color: rgba(0, 119, 230, 0.6);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 45px rgba(0, 119, 230, 0.25);
         }
 
         /* ------------------ HOME SECTION ------------------ */
@@ -354,6 +372,180 @@
         }
 
 
+        /* ------------------ ABOUT SECTION ------------------ */
+        .about-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .about-avatar {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4.5px solid var(--text-white);
+            box-shadow: 0 0 30px rgba(0, 119, 230, 0.6);
+            margin-bottom: 20px;
+        }
+
+        .about-contact-info {
+            font-family: var(--font-body);
+            font-weight: 800;
+            font-size: 1.15rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            line-height: 1.8;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        .about-content-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+        }
+
+        .about-column h3 {
+            font-family: var(--font-heading);
+            font-weight: normal;
+            font-size: 1.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .about-column h3:not(:first-child) {
+            margin-top: 50px;
+        }
+
+        /* TIMELINE LAYOUT */
+        .timeline {
+            list-style-type: none;
+            border-left: 2.5px solid rgba(255, 255, 255, 0.8);
+            margin-left: 15px;
+            padding-bottom: 5px;
+        }
+
+        .timeline li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 28px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            font-weight: 500;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+        }
+
+        .timeline li:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline li strong {
+            font-weight: 800;
+            color: var(--text-white);
+        }
+
+        .timeline li::before {
+            content: '';
+            width: 15px;
+            height: 15px;
+            background: var(--text-white);
+            border-radius: 50%;
+            position: absolute;
+            left: -9px;
+            top: 5px;
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.9);
+        }
+
+        /* SOFTWARE SKILLS PROGRESS */
+        .software-skills-box {
+            background: rgba(0, 20, 60, 0.6);
+            border: 1px solid rgba(0, 119, 230, 0.25);
+            border-radius: 28px;
+            padding: 35px 30px;
+            backdrop-filter: blur(5px);
+        }
+
+        .skill-row {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            margin-bottom: 25px;
+        }
+
+        .skill-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-icon-box {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            flex-shrink: 0;
+        }
+
+        .skill-icon-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .progress-track {
+            flex-grow: 1;
+            height: 24px;
+            background: var(--text-white);
+            border-radius: 15px;
+            overflow: hidden;
+            padding: 2px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--primary-blue);
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 119, 230, 0.5);
+            transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 0;
+        }
+
+        /* TECH STACK */
+        .tech-stack-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px 30px;
+            margin-top: 10px;
+        }
+
+        .tech-item {
+            font-family: var(--font-body);
+            font-weight: 800;
+            font-size: 1.15rem;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .tech-bullet {
+            width: 11px;
+            height: 11px;
+            background-color: var(--text-white);
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+            flex-shrink: 0;
+        }
+
+
         /* ------------------ RESPONSIVE MEDIA QUERIES ------------------ */
         @media (max-width: 1024px) {
             .card-container {
@@ -377,6 +569,9 @@
             }
             .floating-icon:hover {
                 transform: scale(1) !important;
+            }
+            .about-content-grid {
+                gap: 40px;
             }
         }
 
@@ -442,6 +637,22 @@
                 left: 10%;
             }
 
+            /* About Mobiles */
+            .about-content-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .about-column h3:not(:first-child) {
+                margin-top: 40px;
+            }
+            .about-avatar {
+                width: 130px;
+                height: 130px;
+            }
+            .about-contact-info {
+                font-size: 1rem;
+            }
+
             /* Footer Mobiles */
             footer {
                 flex-direction: column;
@@ -460,27 +671,27 @@
         }
     </style>
 </head>
-<body class="page-home">
+<body>
+
+    <!-- STICKY HEADER / NAVIGATION -->
+    <header>
+        <nav class="nav-links">
+            <a href="#home" class="nav-btn nav-btn-home active">HOME</a>
+            <a href="#about" class="nav-btn nav-btn-about">ABOUT</a>
+            <a href="contact.php" class="nav-btn nav-btn-contact">CONTACT</a>
+        </nav>
+    </header>
 
     <div class="portfolio-wrapper">
-        
-        <!-- HEADER / NAVIGATION -->
-        <header>
-            <nav class="nav-links">
-                <a href="index.php" class="nav-btn nav-btn-home">HOME</a>
-                <a href="about.php" class="nav-btn nav-btn-about">ABOUT</a>
-                <a href="contact.php" class="nav-btn nav-btn-contact">CONTACT</a>
-            </nav>
-        </header>
 
-        <!-- MAIN CARD PORTFOLIO CONTENT -->
+        <!-- MAIN SCROLLABLE PORTFOLIO CONTENT -->
         <main>
             
             <!-- HOME SECTION -->
-            <section id="home" class="page-section active-display fade-in">
+            <section id="home" class="page-section is-visible">
                 <div class="card-container">
                     <div class="hero-text">
-                        <h1>JOHN RENO BEDONIA</h1>
+                        <h1>JOHN RENO</h1>
                         <h2>Webdev / UI/UX Designer</h2>
                         <p>I'm a fresh graduate with a degree of Bachelor of Science and Information Technology. Knowledgeable in creatives and technical design skills and I'm producing visually appealing web designs and prototype materials that effectively communicate information and enhance brand identity.</p>
                     </div>
@@ -493,6 +704,126 @@
                     </div>
                 </div>
             </section>
+
+            <!-- ABOUT SECTION -->
+            <section id="about" class="page-section">
+                <div class="card-container">
+                    
+                    <!-- Top Avatar Profile Header -->
+                    <div class="about-header">
+                        <img src="2.0.jpg" alt="John Reno Bedonia Graduation Portrait" class="about-avatar">
+                        <div class="about-contact-info">
+                            <div>Email: johnrenobedonia15@gmail.com</div>
+                            <div>Phone Number: 09983066053/09936799667</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Content Columns -->
+                    <div class="about-content-grid">
+                        
+                        <!-- Left Column (Timeline) -->
+                        <div class="about-column">
+                            <h3>Skills and Interest</h3>
+                            <ul class="timeline">
+                                <li><strong>Technical Skills:</strong> Microsoft Office (Sheet, Docs)</li>
+                                <li><strong>Design Skills:</strong> Adobe Photoshop, Canva, Corel Draw, Figma</li>
+                                <li><strong>Personal Skills:</strong> Problem Solving Skills, Communication Skills, Detail Oriented</li>
+                                <li><strong>Languages:</strong> Filipino, English</li>
+                                <li><strong>Interest:</strong> Music, Sports and Entertainment</li>
+                            </ul>
+
+                            <h3>Certificates</h3>
+                            <ul class="timeline">
+                                <li>45 HRS Training for Fundamentals of Computer and MS Word, Excel, Powerpoint (APEC Mobile Digital Opportunity Center Program)</li>
+                                <li>Unlocking Web Applications Potential with API Frameworks (Seminars and Tours Subject ST 601)</li>
+                                <li>The Necessity of Git and Github for Software Development (Seminars and Tours Subject ST 601)</li>
+                                <li>Member of Philippine Institute of Cybersecurity Professionals (Philippine Institute of Cybersecurity Professionals PICSPRO)</li>
+                                <li>Online Training on Basic Website and Landing Page Design (DTI National Capital Regional Office)</li>
+                            </ul>
+                        </div>
+
+                        <!-- Right Column (Software Skills & Tech Stack) -->
+                        <div class="about-column">
+                            <h3>Software Skills</h3>
+                            <div class="software-skills-box">
+                                
+                                <!-- Photoshop Progress Bar -->
+                                <div class="skill-row">
+                                    <div class="skill-icon-box">
+                                        <img src="adobe photoshop.png" alt="Photoshop">
+                                    </div>
+                                    <div class="progress-track">
+                                        <div class="progress-fill" data-progress="92%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Figma Progress Bar -->
+                                <div class="skill-row">
+                                    <div class="skill-icon-box">
+                                        <img src="figma.jpg" alt="Figma">
+                                    </div>
+                                    <div class="progress-track">
+                                        <div class="progress-fill" data-progress="88%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Canva Progress Bar -->
+                                <div class="skill-row">
+                                    <div class="skill-icon-box">
+                                        <img src="canva-app-logo-on-a-transparent-background-free-png.webp" alt="Canva">
+                                    </div>
+                                    <div class="progress-track">
+                                        <div class="progress-fill" data-progress="90%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Git Progress Bar -->
+                                <div class="skill-row">
+                                    <div class="skill-icon-box">
+                                        <img src="git.webp" alt="Git">
+                                    </div>
+                                    <div class="progress-track">
+                                        <div class="progress-fill" data-progress="75%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- GitHub Progress Bar -->
+                                <div class="skill-row">
+                                    <div class="skill-icon-box">
+                                        <img src="github.png" alt="GitHub">
+                                    </div>
+                                    <div class="progress-track">
+                                        <div class="progress-fill" data-progress="80%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- VS Code Progress Bar -->
+                                <div class="skill-row">
+                                    <div class="skill-icon-box">
+                                        <img src="Visualstudiocode.webp" alt="VS Code">
+                                    </div>
+                                    <div class="progress-track">
+                                        <div class="progress-fill" data-progress="85%"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <h3>Tech Stack</h3>
+                            <div class="tech-stack-grid">
+                                <div class="tech-item"><span class="tech-bullet"></span>HTML</div>
+                                <div class="tech-item"><span class="tech-bullet"></span>React</div>
+                                <div class="tech-item"><span class="tech-bullet"></span>CSS</div>
+                                <div class="tech-item"><span class="tech-bullet"></span>PHP</div>
+                                <div class="tech-item"><span class="tech-bullet"></span>JavaScript</div>
+                                <div class="tech-item"><span class="tech-bullet"></span>Version Control (Git)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
         </main>
 
     </div>
@@ -501,7 +832,6 @@
     <footer>
         <div class="footer-left">
             <div class="footer-socials">
-                <!-- Social links pointing to target platforms -->
                 <a href="https://github.com/Renojayy" class="social-link" title="GitHub" target="_blank" rel="noopener noreferrer">
                     <img src="github.png" alt="GitHub">
                 </a>
@@ -532,6 +862,83 @@
             </div>
         </div>
     </footer>
+
+    <!-- INTERACTIVE SCROLL & ANIMATION SCRIPTS -->
+    <script>
+        // Trigger progress bars animation
+        let progressAnimated = false;
+        function animateSkills() {
+            if (progressAnimated) return;
+            const progressFills = document.querySelectorAll('#about .progress-fill');
+            progressFills.forEach(fill => {
+                const targetWidth = fill.getAttribute('data-progress');
+                if (targetWidth) {
+                    fill.style.width = targetWidth;
+                }
+            });
+            progressAnimated = true;
+        }
+
+        // Intersection Observer for Section Reveal & Animations
+        const sections = document.querySelectorAll('.page-section');
+        const navLinks = document.querySelectorAll('.nav-links .nav-btn');
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+
+                    // If About section becomes visible, animate progress bars
+                    if (entry.target.id === 'about') {
+                        animateSkills();
+                    }
+
+                    // Update active nav button
+                    navLinks.forEach(link => {
+                        const targetHref = link.getAttribute('href');
+                        if (targetHref === '#' + entry.target.id) {
+                            link.classList.add('active');
+                        } else if (targetHref && targetHref.startsWith('#')) {
+                            link.classList.remove('active');
+                        }
+                    });
+                }
+            });
+        }, {
+            threshold: 0.25,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        sections.forEach(section => sectionObserver.observe(section));
+
+        // Smooth scroll handling on nav clicks
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Trigger on load if initial position is already near about
+        window.addEventListener('DOMContentLoaded', () => {
+            const aboutSection = document.getElementById('about');
+            if (aboutSection) {
+                const rect = aboutSection.getBoundingClientRect();
+                if (rect.top <= window.innerHeight) {
+                    aboutSection.classList.add('is-visible');
+                    animateSkills();
+                }
+            }
+        });
+    </script>
 
 </body>
 </html>

@@ -1,3 +1,130 @@
+<?php
+$is_ajax = (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest') || isset($_GET['ajax']);
+
+if ($is_ajax) {
+?>
+<!-- ABOUT SECTION -->
+<section id="about" class="page-section active-display fade-in">
+    <div class="card-container">
+        
+        <!-- Top Avatar Profile Header -->
+        <div class="about-header">
+            <img src="2.0.jpg" alt="John Reno Bedonia Graduation Portrait" class="about-avatar">
+            <div class="about-contact-info">
+                <div>Email: johnrenobedonia15@gmail.com</div>
+                <div>Phone Number: 09983066053/09936799667</div>
+            </div>
+        </div>
+        
+        <!-- Content Columns -->
+        <div class="about-content-grid">
+            
+            <!-- Left Column (Timeline) -->
+            <div class="about-column">
+                <h3>Skills and Interest</h3>
+                <ul class="timeline">
+                    <li><strong>Technical Skills:</strong> Microsoft Office (Sheet, Docs)</li>
+                    <li><strong>Design Skills:</strong> Adobe Photoshop, Canva, Corel Draw, Figma</li>
+                    <li><strong>Personal Skills:</strong> Problem Solving Skills, Communication Skills, Detail Oriented</li>
+                    <li><strong>Languages:</strong> Filipino, English</li>
+                    <li><strong>Interest:</strong> Music, Sports and Entertainment</li>
+                </ul>
+
+                <h3>Certificates</h3>
+                <ul class="timeline">
+                    <li>45 HRS Training for Fundamentals of Computer and MS Word, Excel, Powerpoint (APEC Mobile Digital Opportunity Center Program)</li>
+                    <li>Unlocking Web Applications Potential with API Frameworks (Seminars and Tours Subject ST 601)</li>
+                    <li>The Necessity of Git and Github for Software Development (Seminars and Tours Subject ST 601)</li>
+                    <li>Member of Philippine Institute of Cybersecurity Professionals (Philippine Institute of Cybersecurity Professionals PICSPRO)</li>
+                    <li>Online Training on Basic Website and Landing Page Design (DTI National Capital Regional Office)</li>
+                </ul>
+            </div>
+
+            <!-- Right Column (Software Skills & Tech Stack) -->
+            <div class="about-column">
+                <h3>Software Skills</h3>
+                <div class="software-skills-box">
+                    
+                    <!-- Photoshop Progress Bar -->
+                    <div class="skill-row">
+                        <div class="skill-icon-box">
+                            <img src="adobe photoshop.png" alt="Photoshop">
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" data-progress="92%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Figma Progress Bar -->
+                    <div class="skill-row">
+                        <div class="skill-icon-box">
+                            <img src="figma.jpg" alt="Figma">
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" data-progress="88%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Canva Progress Bar -->
+                    <div class="skill-row">
+                        <div class="skill-icon-box">
+                            <img src="canva-app-logo-on-a-transparent-background-free-png.webp" alt="Canva">
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" data-progress="90%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Git Progress Bar -->
+                    <div class="skill-row">
+                        <div class="skill-icon-box">
+                            <img src="git.webp" alt="Git">
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" data-progress="75%"></div>
+                        </div>
+                    </div>
+
+                    <!-- GitHub Progress Bar -->
+                    <div class="skill-row">
+                        <div class="skill-icon-box">
+                            <img src="github.png" alt="GitHub">
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" data-progress="80%"></div>
+                        </div>
+                    </div>
+
+                    <!-- VS Code Progress Bar -->
+                    <div class="skill-row">
+                        <div class="skill-icon-box">
+                            <img src="Visualstudiocode.webp" alt="VS Code">
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" data-progress="85%"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <h3>Tech Stack</h3>
+                <div class="tech-stack-grid">
+                    <div class="tech-item"><span class="tech-bullet"></span>HTML</div>
+                    <div class="tech-item"><span class="tech-bullet"></span>React</div>
+                    <div class="tech-item"><span class="tech-bullet"></span>CSS</div>
+                    <div class="tech-item"><span class="tech-bullet"></span>PHP</div>
+                    <div class="tech-item"><span class="tech-bullet"></span>JavaScript</div>
+                    <div class="tech-item"><span class="tech-bullet"></span>Version Control (Git)</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<?php
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
