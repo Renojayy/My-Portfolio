@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - John Reno Bedonia</title>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <style>
         /* CSS RESET & VARIABLES */
         :root {
@@ -32,7 +35,7 @@
         }
 
         body {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('14237505_5438810.jpg') no-repeat center center fixed;
+            background: #18181B;
             background-size: cover;
             color: var(--text-white);
             font-family: var(--font-body);
@@ -96,9 +99,17 @@
         }
 
         /* CONTROL BUTTON VISIBILITY PER PAGE STATE */
-        body.page-home .nav-btn-home { display: none; }
-        body.page-about .nav-btn-about { display: none; }
-        body.page-contact .nav-btn-contact { display: none; }
+        body.page-home .nav-btn-home {
+            display: none;
+        }
+
+        body.page-about .nav-btn-about {
+            display: none;
+        }
+
+        body.page-contact .nav-btn-contact {
+            display: none;
+        }
 
         /* CORE SECTION CONTAINER */
         .page-section {
@@ -169,7 +180,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 30px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         .about-column h3:not(:first-child) {
@@ -191,7 +202,7 @@
             font-size: 1.1rem;
             line-height: 1.6;
             font-weight: 500;
-            text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
         }
 
         .timeline li:last-child {
@@ -244,7 +255,7 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             flex-shrink: 0;
         }
 
@@ -269,7 +280,8 @@
             border-radius: 15px;
             box-shadow: 0 0 10px rgba(0, 119, 230, 0.5);
             transition: width 1.2s ease-in-out;
-            width: 0; /* Animated on page load via JS */
+            width: 0;
+            /* Animated on page load via JS */
         }
 
         /* TECH STACK */
@@ -288,7 +300,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
         }
 
         .tech-bullet {
@@ -310,7 +322,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-top: 1px solid rgba(0,0,0,0.1);
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
         }
 
         .footer-left {
@@ -331,7 +343,7 @@
             overflow: hidden;
             width: 46px;
             height: 46px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
             background: transparent;
             transition: all 0.3s ease;
         }
@@ -383,7 +395,7 @@
             font-family: var(--font-heading);
             font-weight: normal;
             font-size: 1.15rem;
-            color: rgba(0,0,0,0.7);
+            color: rgba(0, 0, 0, 0.7);
             letter-spacing: 0.5px;
             text-transform: uppercase;
             text-decoration: none;
@@ -400,6 +412,7 @@
             .card-container {
                 padding: 40px;
             }
+
             .about-content-grid {
                 gap: 40px;
             }
@@ -410,14 +423,17 @@
                 padding: 20px 10px;
                 gap: 20px;
             }
+
             header {
                 justify-content: center;
                 padding-right: 0;
             }
+
             .nav-btn {
                 padding: 10px 25px;
                 font-size: 0.95rem;
             }
+
             .card-container {
                 padding: 30px 20px;
                 border-radius: 35px;
@@ -427,13 +443,16 @@
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
+
             .about-column h3:not(:first-child) {
                 margin-top: 40px;
             }
+
             .about-avatar {
                 width: 130px;
                 height: 130px;
             }
+
             .about-contact-info {
                 font-size: 1rem;
             }
@@ -444,9 +463,11 @@
                 padding: 30px 20px;
                 text-align: center;
             }
+
             .footer-left {
                 align-items: center;
             }
+
             .footer-right {
                 flex-direction: column;
                 gap: 20px;
@@ -455,10 +476,11 @@
         }
     </style>
 </head>
+
 <body class="page-about">
 
     <div class="portfolio-wrapper">
-        
+
         <!-- HEADER / NAVIGATION -->
         <header>
             <nav class="nav-links">
@@ -470,11 +492,11 @@
 
         <!-- MAIN CARD PORTFOLIO CONTENT -->
         <main>
-            
+
             <!-- ABOUT SECTION -->
             <section id="about" class="page-section">
                 <div class="card-container">
-                    
+
                     <!-- Top Avatar Profile Header -->
                     <div class="about-header">
                         <img src="2.0.jpg" alt="John Reno Bedonia Graduation Portrait" class="about-avatar">
@@ -483,28 +505,34 @@
                             <div>Phone Number: 09983066053/09936799667</div>
                         </div>
                     </div>
-                    
+
                     <!-- Content Columns -->
                     <div class="about-content-grid">
-                        
+
                         <!-- Left Column (Timeline) -->
                         <div class="about-column">
                             <h3>Skills and Interest</h3>
                             <ul class="timeline">
                                 <li><strong>Technical Skills:</strong> Microsoft Office (Sheet, Docs)</li>
                                 <li><strong>Design Skills:</strong> Adobe Photoshop, Canva, Corel Draw, Figma</li>
-                                <li><strong>Personal Skills:</strong> Problem Solving Skills, Communication Skills, Detail Oriented</li>
+                                <li><strong>Personal Skills:</strong> Problem Solving Skills, Communication Skills,
+                                    Detail Oriented</li>
                                 <li><strong>Languages:</strong> Filipino, English</li>
                                 <li><strong>Interest:</strong> Music, Sports and Entertainment</li>
                             </ul>
 
                             <h3>Certificates</h3>
                             <ul class="timeline">
-                                <li>45 HRS Training for Fundamentals of Computer and MS Word, Excel, Powerpoint (APEC Mobile Digital Opportunity Center Program)</li>
-                                <li>Unlocking Web Applications Potential with API Frameworks (Seminars and Tours Subject ST 601)</li>
-                                <li>The Necessity of Git and Github for Software Development (Seminars and Tours Subject ST 601)</li>
-                                <li>Member of Philippine Institute of Cybersecurity Professionals (Philippine Institute of Cybersecurity Professionals PICSPRO)</li>
-                                <li>Online Training on Basic Website and Landing Page Design (DTI National Capital Regional Office)</li>
+                                <li>45 HRS Training for Fundamentals of Computer and MS Word, Excel, Powerpoint (APEC
+                                    Mobile Digital Opportunity Center Program)</li>
+                                <li>Unlocking Web Applications Potential with API Frameworks (Seminars and Tours Subject
+                                    ST 601)</li>
+                                <li>The Necessity of Git and Github for Software Development (Seminars and Tours Subject
+                                    ST 601)</li>
+                                <li>Member of Philippine Institute of Cybersecurity Professionals (Philippine Institute
+                                    of Cybersecurity Professionals PICSPRO)</li>
+                                <li>Online Training on Basic Website and Landing Page Design (DTI National Capital
+                                    Regional Office)</li>
                             </ul>
                         </div>
 
@@ -512,7 +540,7 @@
                         <div class="about-column">
                             <h3>Software Skills</h3>
                             <div class="software-skills-box">
-                                
+
                                 <!-- Photoshop Progress Bar -->
                                 <div class="skill-row">
                                     <div class="skill-icon-box">
@@ -598,13 +626,16 @@
     <footer>
         <div class="footer-left">
             <div class="footer-socials">
-                <a href="https://github.com/Renojayy" class="social-link" title="GitHub" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/Renojayy" class="social-link" title="GitHub" target="_blank"
+                    rel="noopener noreferrer">
                     <img src="github.png" alt="GitHub">
                 </a>
-                <a href="https://www.upwork.com/freelancers/~019bd1e8b75ef7b041" class="social-link" title="Upwork" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.upwork.com/freelancers/~019bd1e8b75ef7b041" class="social-link" title="Upwork"
+                    target="_blank" rel="noopener noreferrer">
                     <img src="upwork.png" alt="Upwork">
                 </a>
-                <a href="https://www.facebook.com/johnreno.ix.9" class="social-link" title="Facebook" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.facebook.com/johnreno.ix.9" class="social-link" title="Facebook" target="_blank"
+                    rel="noopener noreferrer">
                     <img src="facebook.png" alt="Facebook">
                 </a>
             </div>
@@ -616,15 +647,18 @@
         <div class="footer-right">
             <div class="footer-col">
                 <span class="footer-col-title">Facebook</span>
-                <a href="https://www.facebook.com/johnreno.ix.9" class="footer-col-val" target="_blank" rel="noopener noreferrer">John Reno</a>
+                <a href="https://www.facebook.com/johnreno.ix.9" class="footer-col-val" target="_blank"
+                    rel="noopener noreferrer">John Reno</a>
             </div>
             <div class="footer-col">
                 <span class="footer-col-title">Github</span>
-                <a href="https://github.com/Renojayy" class="footer-col-val" target="_blank" rel="noopener noreferrer">Renojayy</a>
+                <a href="https://github.com/Renojayy" class="footer-col-val" target="_blank"
+                    rel="noopener noreferrer">Renojayy</a>
             </div>
             <div class="footer-col">
                 <span class="footer-col-title">Upwork</span>
-                <a href="https://www.upwork.com/freelancers/~019bd1e8b75ef7b041" class="footer-col-val" target="_blank" rel="noopener noreferrer">John Bedonia</a>
+                <a href="https://www.upwork.com/freelancers/~019bd1e8b75ef7b041" class="footer-col-val" target="_blank"
+                    rel="noopener noreferrer">John Bedonia</a>
             </div>
         </div>
     </footer>
@@ -644,4 +678,5 @@
     </script>
 
 </body>
+
 </html>
